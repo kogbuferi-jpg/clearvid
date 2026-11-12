@@ -1,0 +1,23 @@
+# Core
+torch>=2.1
+torchvision
+opencv-python
+numpy
+tqdm
+pyyaml
+
+# Subtitle/watermark detection
+paddlepaddle-gpu; sys_platform != "darwin"
+paddleocr
+
+# Video inpainting engines (MVP: E2FGVI, HQ: ProPainter)
+# Install from source repos, see docs/PLAN.md
+# - https://github.com/MCG-NKU/E2FGVI
+# - https://github.com/sczhou/ProPainter
+
+# Video IO
+ffmpeg-python
+av
+
+# GUI (M3)
+gradio

@@ -1,0 +1,20 @@
+# ClearVid 默认配置
+io:
+  codec: h264_nvenc      # 无 N 卡时回退 libx264
+  audio: copy            # 音频直通
+  container: mkv
+
+detect:
+  engine: paddleocr      # 字幕区域检测
+  dilate_px: 8           # mask 膨胀像素
+  temporal_merge_gap: 10 # 连续帧合并间隔
+
+inpaint:
+  engine: e2fgvi         # 免费: e2fgvi | 高质量: propainter
+  max_clip_len: 60       # 每段最大帧数（控制显存）
+  neighbor_stride: 5
+
+restore:                 # 老片修复管线
+  denoise: true
+  descratch: true
+  upscale: 1             # 1=不放大, 2/4=超分倍率
